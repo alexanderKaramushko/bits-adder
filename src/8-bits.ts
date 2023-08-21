@@ -2,6 +2,7 @@ import compose from 'lodash.compose';
 import zip from 'lodash.zip';
 import partial from 'lodash.partial';
 import { fullAdd } from './full-adder';
+import { arrayFromNumber } from './utils';
 
 export type BitsSum = number[];
 
@@ -14,8 +15,8 @@ export function add8bits(entryA: number, entryB: number, input: BitsAdderIO = { 
   const { curry, sum } = input;
 
   const bitsPairs = zip(
-    [...entryA.toString()].map(Number),
-    [...entryB.toString()].map(Number),
+    arrayFromNumber(entryA),
+    arrayFromNumber(entryB),
   );
 
   return compose(

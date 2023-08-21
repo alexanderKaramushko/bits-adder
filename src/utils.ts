@@ -28,3 +28,7 @@ export function exceptOr(entryA: number, entryB: number) {
 
   return and(orOut, andNotOut);
 }
+
+export function arrayFromNumber(value: number) {
+  return [...value.toString()].map(Number);
+}
