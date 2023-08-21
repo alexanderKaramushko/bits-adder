@@ -4,7 +4,8 @@
 
 import compose from 'lodash.compose';
 import partial from 'lodash.partial';
-import { BitsAdderIO, add8bits } from './8-bits';
+import { add8bits } from './8-bits';
+import { BitsAdderIO } from './types';
 
 export function add16bits(entryA: number, entryB: number, input: BitsAdderIO = { curry: 0, sum: [] }): BitsAdderIO {
   const { curry, sum } = input;

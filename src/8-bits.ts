@@ -3,13 +3,7 @@ import zip from 'lodash.zip';
 import partial from 'lodash.partial';
 import { fullAdd } from './full-adder';
 import { arrayFromNumber } from './utils';
-
-export type BitsSum = number[];
-
-export type BitsAdderIO = {
-  curry: number;
-  sum: BitsSum;
-};
+import { BitsAdderIO } from './types';
 
 export function add8bits(entryA: number, entryB: number, input: BitsAdderIO = { curry: 0, sum: [] }): BitsAdderIO {
   const { curry, sum } = input;
