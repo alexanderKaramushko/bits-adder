@@ -5,6 +5,9 @@ import { fullAdd } from './full-adder';
 import { arrayFromNumber } from './utils';
 import { BitsAdderIO } from './types';
 
+/**
+ * @description 8-битовый сумматор, композиция полных сумматоров
+ */
 export function add8bits(entryA: number, entryB: number, input: BitsAdderIO = { curry: 0, sum: [] }): BitsAdderIO {
   const { curry, sum } = input;
 
