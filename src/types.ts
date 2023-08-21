@@ -1,4 +1,4 @@
-export type SumResult = {
+export type BitsAdder = {
   curryOut: number;
-  sum: number;
+  sum: number[];
 };
