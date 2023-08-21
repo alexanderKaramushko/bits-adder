@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
+    "@types/lodash.partial": "^4.2.7",
+    "@types/lodash.zip": "^4.2.7",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.19.0",
@@ -37,6 +39,9 @@
   },
   "dependencies": {
     "incremental-dom": "^0.7.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "lodash.compose": "^2.4.1",
+    "lodash.partial": "^4.2.1",
+    "lodash.zip": "^4.2.0"
   }
 }
