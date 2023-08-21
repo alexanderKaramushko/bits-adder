@@ -36,7 +36,7 @@ function exceptOr(entryA: number, entryB: number) {
  */
 export function halfAdd(entryA: number, entryB: number): SumResult {
   return {
-    curry: and(entryA, entryB),
+    curryOut: and(entryA, entryB),
     sum: exceptOr(entryA, entryB),
   };
 }

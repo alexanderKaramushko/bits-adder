@@ -1,4 +1,4 @@
 export type SumResult = {
-  curry: number;
+  curryOut: number;
   sum: number;
 };
