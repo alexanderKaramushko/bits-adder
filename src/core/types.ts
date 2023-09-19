@@ -1,12 +1,10 @@
-/**
- * @description Вход и выход в виде последовательности битов
- */
-export type BitsSum = number[];
+export type BinaryNumber = string;
 
 /**
  * @description Вход и выход полных сумматоров, а следовательно и n-битовых сумматоров
  */
 export type BitsAdderIO = {
   curry: number;
-  sum: BitsSum;
+  sum: BinaryNumber;
+  isSubstract?: boolean;
 };

@@ -1,25 +1,15 @@
-import compose from 'lodash.compose';
-import zip from 'lodash.zip';
-import partial from 'lodash.partial';
-import { fullAdd } from './full-adder';
-import { arrayFromNumber } from './utils';
-import { BitsAdderIO } from './types';
+import { invertEntry, sumUp } from './core';
+import { BinaryNumber, BitsAdderIO } from './core/types';
 
 /**
- * @description 8-битовый сумматор, композиция полных сумматоров
- */
-export function add8bits(entryA: number, entryB: number, input: BitsAdderIO = { curry: 0, sum: [] }): BitsAdderIO {
-  const { curry, sum } = input;
+   * @description 8-битовый сумматор, композиция полных сумматоров
+   *
+   * @todo Протестировать кейсы переполнения/исчезновения разрядов при вычитании
+*/
+export function add8bits(entryA: BinaryNumber, entryB: BinaryNumber, input: BitsAdderIO): BitsAdderIO {
+  const { isSubstract } = input;
 
-  const bitsPairs = zip(
-    arrayFromNumber(entryA),
-    arrayFromNumber(entryB),
-  );
-
-  return compose(
-    ...(
-      bitsPairs
-        .map(([bit1, bit2]) => partial(fullAdd, bit1 as number, bit2 as number))
-    ),
-  )({ curry, sum });
+  return isSubstract
+    ? sumUp(entryA, invertEntry(entryB), { ...input, curry: 1 })
+    : sumUp(entryA, entryB, input);
 }
