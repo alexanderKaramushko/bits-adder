@@ -17,7 +17,6 @@
     "operatios"
   ],
   "scripts": {
-    "start": "nodemon ./lib/index.ts",
     "test:dev": "jest src --watch"
   },
   "devDependencies": {
